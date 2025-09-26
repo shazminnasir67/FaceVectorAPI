@@ -10,7 +10,7 @@
 - Resolves Windows-specific TensorFlow DLL issues
 - Deployed on Railway for cloud accessibility
 
----
+
 
 ## Table of Contents
 
@@ -24,7 +24,7 @@
 8. [API Usage](#api-usage)
 9. [Limitations & Pain Points Solved](#limitations--pain-points-solved)
 
----
+
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@
 - **Git**: For cloning and version control
 - **Docker**: For containerized deployment (optional)
 
----
+
 
 ## Local Setup
 
@@ -70,7 +70,7 @@ cp node_modules/@tensorflow/tfjs-node/deps/lib/tensorflow.dll node_modules/@tens
 
 This step is only required for Windows. Linux/macOS setups handle this automatically in Docker.
 
----
+
 
 ## Running Locally
 
@@ -100,7 +100,6 @@ Example response:
 }
 ```
 
----
 
 ## Docker Setup
 
@@ -141,7 +140,7 @@ Example response:
 
 ![Docker Build Success](assets/docker_success.PNG)
 
----
+
 
 ## Pushing to Docker Hub
 
@@ -165,7 +164,7 @@ Example response:
 
    Image available at: [hub.docker.com/r/shazmin67/facevectorapi](https://hub.docker.com/r/shazmin67/facevectorapi)
 
----
+
 
 ## Railway Deployment
 
@@ -183,7 +182,7 @@ Test endpoints:
 - Health: `GET /health`
 - Embeddings: `POST /embeddings`
 
----
+
 
 ## API Usage
 
@@ -192,6 +191,7 @@ Test endpoints:
    ```bash
    curl https://facevectorapi-production.up.railway.app/health
    ```
+
    
 ![Docker Build Success](assets/deployment.PNG)
 
@@ -207,7 +207,7 @@ Test endpoints:
 
 Use embeddings for face verification, similarity comparison, or clustering.
 
----
+
 
 ## Limitations & Pain Points Solved
 
@@ -219,14 +219,4 @@ Use embeddings for face verification, similarity comparison, or clustering.
 
 This project showcases an **end-to-end face embeddings API**, from local development to cloud deployment, ready for backend integration.
 
----
 
-## Workflow Diagram
-
-Below is a simple ASCII diagram illustrating the API workflow:
-
-```
-[Client] --> [Image Upload] --> [FaceVectorAPI] --> [128D Embeddings] --> [Backend/App]
-  |              POST /embeddings        |              JSON Response         |
-  |              (multipart/form-data)   |              (embeddings array)    |
-```

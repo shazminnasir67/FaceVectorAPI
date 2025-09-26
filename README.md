@@ -137,6 +137,10 @@ Example response:
    - Health: `curl http://localhost:3000/health`
    - Embeddings: `curl -X POST -F "image=@img_db.jpeg" http://localhost:3000/embeddings`
 
+
+
+![Docker Build Success](assets/docker_success.PNG)
+
 ---
 
 ## Pushing to Docker Hub
@@ -188,6 +192,9 @@ Test endpoints:
    ```bash
    curl https://facevectorapi-production.up.railway.app/health
    ```
+   
+![Docker Build Success](assets/deployment.PNG)
+
 
 - **Get Face Embeddings**:
 
@@ -195,16 +202,8 @@ Test endpoints:
    curl -X POST -F "image=@img_db.jpeg" https://facevectorapi-production.up.railway.app/embeddings
    ```
 
-- **Response**:
+![Docker Build Success](assets/Results.PNG)
 
-   ```json
-   {
-     "success": true,
-     "embeddings": [0.123, 0.456, ..., 0.789],
-     "confidence": 0.98,
-     "dimensions": 128
-   }
-   ```
 
 Use embeddings for face verification, similarity comparison, or clustering.
 

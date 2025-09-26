@@ -33,9 +33,9 @@ async function loadModels() {
     await faceapi.nets.faceRecognitionNet.loadFromDisk('./models');
     await faceapi.nets.faceLandmark68Net.loadFromDisk('./models');
     modelsLoaded = true;
-    console.log('✅ Models loaded successfully!');
+    console.log('Models loaded successfully!');
   } catch (error) {
-    console.error('❌ Error loading models:', error.message);
+    console.error(' Error loading models:', error.message);
     process.exit(1);
   }
 }
@@ -96,7 +96,6 @@ app.post('/embeddings', upload.single('image'), async (req, res) => {
       });
     }
   } catch (error) {
-    // Clean up uploaded file on error
     if (fs.existsSync(imagePath)) {
       fs.unlinkSync(imagePath);
     }
@@ -121,9 +120,9 @@ async function startServer() {
   await loadModels();
   
   app.listen(PORT, () => {
-    console.log(`🚀 Face API server running on http://localhost:${PORT}`);
-    console.log(`📸 POST to /embeddings with an image to get face embeddings`);
-    console.log(`❤️  GET /health to check server status`);
+    console.log(` Face API server running on http://localhost:${PORT}`);
+    console.log(` POST to /embeddings with an image to get face embeddings`);
+    console.log(` GET /health to check server status`);
   });
 }
 

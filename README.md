@@ -211,11 +211,13 @@ Use embeddings for face verification, similarity comparison, or clustering.
 
 ## Limitations & Pain Points Solved
 
-- **Single Model**: Unlike FaceNet or ArcFace, this uses a single `face-api.js` model, reducing complexity and storage needs.
-- **JavaScript-Based**: No Python bindings required, fully compatible with Node.js.
-- **Windows DLL Fix**: Manually resolved TensorFlow DLL issues for Windows users.
-- **Dockerized**: Ensures consistent builds across platforms, avoiding native build errors.
-- **Seamless Deployment**: Works across local, Docker, and Railway without conversion issues.
+- **Single High-Accuracy Model**: Uses the `FaceRecognitionNet` from `face-api.js` to extract 128D embeddings, avoiding the need to set up local workspace and additional dependencies required by models like FaceNet or ArcFace.  
+- **Language Independent Usage**: Although the server is built with Node.js and Express, it can be called from **any platform or language** — Android, iOS, web, etc.  
+- **Simplified Setup**: No need to convert models to TFLite or manage local model files, which can lead to accuracy loss and extra scripting.  
+- **Windows DLL Fix**: Manually resolved TensorFlow DLL issues to ensure smooth setup on Windows.  
+- **Dockerized**: Provides consistent builds across platforms, avoiding native compilation errors.  
+- **Seamless Deployment**: Works locally, in Docker, or on Railway with no conversion issues, making integration into any app straightforward.  
+
 
 This project showcases an **end-to-end face embeddings API**, from local development to cloud deployment, ready for backend integration.
 
